@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShoppingList';
+  newPicture:string="";
+  empty=true;
+  description:string="";
+
   
 
 products = [{productPicture:"Iphone7-.png",productPrice:270,productDescription:"Iphone7"}, 
@@ -18,7 +22,23 @@ products = [{productPicture:"Iphone7-.png",productPrice:270,productDescription:"
 {productPicture:"Floral Dress.jpg" ,productPrice:400,productDescription:"Green dress for Woman"}
 ];
 NewProducts =[]
+totalAmount: any = 0;
+price: number;
+
 new(product){
   this.NewProducts.push(product);
+  this.totalAmounts(product.productPrice);
+}
+Delete(NewProducts){
+let index=this.NewProducts.indexOf(NewProducts)
+this.NewProducts.splice(index,1)
+this.AmountSub(NewProducts.productPrice)
+}
+
+totalAmounts(price){
+  this.totalAmount+= price
+}
+AmountSub(price){
+  this.totalAmount=price
 }
 }

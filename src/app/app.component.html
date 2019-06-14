@@ -29,12 +29,13 @@
             {{product.productDescription}}<br>
 
            R{{product.productPrice}}<br>
-          
       
   <button mat-raised-button color="accent" (click)= "new(product)">Add to cart</button>
 
+
     </mat-grid-tile>
   </mat-grid-list>
+
   <mat-card *ngFor = "let NewProduct of NewProducts">
     <mat-card-subtitle>Shopping List of items:</mat-card-subtitle>
     <img src="../assets/image/{{NewProduct.productPicture}} " width=200px/><br>
@@ -42,8 +43,12 @@
     {{NewProduct.productDescription}}<br>
 
    R{{NewProduct.productPrice}}<br>
-  
+
+   <button mat-raised-button color = "primary" (click) = "Delete(NewProducts)">Delete</button>
+   
+
   </mat-card>
+  {{totalAmount}}
 
 
 
