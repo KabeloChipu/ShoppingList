@@ -1,0 +1,55 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <div id="top">
+    <a href="home.html">home</a> |
+    <a href="contactUs.html">Contact Us</a> |
+    <a href=AboutUs.html>About Us</a>
+  </div>
+  <h1 class="app">
+    Welcome to {{ title }}!!
+  </h1>
+  <img width="300" alt="Angular Logo" src="../assets/image/ShoppingImage.jpg">
+  <h2 class="app">Kaybee Fishion and Women Stylish</h2>
+  <mat-card>
+      <mat-card-title>Products offered
+      </mat-card-title>
+    </mat-card>
+    
+    <mat-card>
+      <mat-card-subtitle>List of items offered on our online shopping:</mat-card-subtitle>
+    </mat-card><br>
+  
+  <mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let product of products">
+      
+            <img src="../assets/image/{{product.productPicture}} " width=200px/><br>
+
+
+
+            {{product.productDescription}}<br>
+
+           R{{product.productPrice}}<br>
+          
+      
+  <button mat-raised-button color="accent" (click)= "new(product)">Add to cart</button>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-card *ngFor = "let NewProduct of NewProducts">
+    <mat-card-subtitle>Shopping List of items:</mat-card-subtitle>
+    <img src="../assets/image/{{NewProduct.productPicture}} " width=200px/><br>
+
+    {{NewProduct.productDescription}}<br>
+
+   R{{NewProduct.productPrice}}<br>
+  
+  </mat-card>
+
+
+
+
+
+
+
+
+
